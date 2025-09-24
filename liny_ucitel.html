@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ucitel lenost</title>
+    <style>
+        .div {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <input class="oss" type="text" placeholder="Zadej jmeno">
+    <button class="btn">Ohodnotit</button>
+
+    <div class="vysledek"></div><span class="emoji"></span>
+    
+
+
+
+
+
+
+    <script>
+        let input = document.querySelector(".oss");
+        let button = document.querySelector(".btn");
+        let vysledek = document.querySelector(".vysledek")
+        let neco = document.querySelector(".emoji")
+
+        button.addEventListener("click", () => {
+            let jmeno = input.value.trim();
+            let znamka = Math.floor(Math.random() *5 ) + 1;
+
+            let emoji = "";
+            let barva = "";
+            let text = "";
+            switch (znamka) {
+                case 1:
+                    emoji = "🤙";
+                    barva = "cyan";
+                    text = "black"
+                    break;
+                    
+                case 2:
+                    emoji = "👍";
+                    barva = "red";
+                    text = "black"
+                    break;
+                case 3:
+                    emoji = "😊";
+                    barva = "lightgray"
+                    text = "black"
+                    break;
+                case 4:
+                    emoji = "😒"
+                    barva = "orange"
+                    text = "black"
+                    break;
+                case 5:
+                    emoji = "💀💀";
+                    barva = "black";
+                    text = "white"
+                    break;
+
+            }
+            vysledek.style.color = text;
+            document.body.style.backgroundColor = barva;
+            neco.style.fontSize = "160px"
+            neco.textContent = `${emoji}`
+            vysledek.textContent = `${jmeno}, tvoje znamka je ${znamka}!, `
+            
+
+        });
+
+    </script>
+</body>
+</html>
